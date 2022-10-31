@@ -1,3 +1,7 @@
+## JetBrains Issues and Resolutions on Kubuntu
+There were certain things that required a certain amount of consideration/configuration. Things that haven't been an issue on other distros
+seemed to have been an issue here, at least with IntelliJ Ultimate 2018.2.
+
 ### Getting JetBrains IDE Running on Kubuntu
 JetBrains IntelliJ was unable to run out-of-the-box. After installing `IntelliJ Ultimate 2018.2` on `Kubuntu 22.04` it
 would lock up whenever trying to open a file for editing.
@@ -58,5 +62,28 @@ This was resolved by adding a dependency that was missing by default, the `openj
 sudo apt install openjfx
 ```
 
+### Getting a working Markdown Viewer
+This has worked on other platforms, but on Kubuntu the Markdown Viewer in IntelliJ was not working properl, espescially with things like images.
+ 
+##### Issue
+This appears to be a known issue with certain versions of IntelliJ, supposedly fixed in `Version 2019.2`, which is not an option. Details on the known
+issue can be found in this [ticket](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360004416679-Markup-plugin-does-not-show-images).
 
+This can be identified by seeing improperly rendered pages when switching to the Markdown viewer. This was easily/especially noticeable when it came to
+links and images.
 
+##### Resolution
+The resolution was to obtain a third-party Markdown Plug-in. This replaces the default Jet Brains Plug-in. It is pretty nice overall, and has more options.
+Luckily, this Plug-in was developed and maintained in the era of `Version 2018.2`. The Plug-in is called [Markdown Navigator Enhanced](https://plugins.jetbrains.com/plugin/7896-markdown-navigator-enhanced).
+
+The version of Markdown Navigator Enhanced to download for `IntelliJ Ultimate 2018.2` is Version [2.9.0](https://plugins.jetbrains.com/plugin/7896-markdown-navigator-enhanced/versions/stable/66558).
+Download the Plug-in Archive. No need to unpack it.
+
+###### Install the Third-Party Plug-in on IntelliJ Ultimate.
+* Navigate to `File -> Settings...`
+  * Click the `Plugins` sub-menu
+     * Click the `Install Plugin from disk...` Button
+     * ![Import Plugin](./Screenshots/InstallJetBrainsPlugin.png)
+     * Select the Markdown Navigator Enhanced Plugin that was just downloaded to Import
+  * You will need to restart IntelliJ for the update to take effect.
+* When/if prompted, select the new Markdown Plug-in that was just installed as the Default Plug-in for Markdown files.
