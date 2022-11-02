@@ -13,7 +13,7 @@ tmp
 *.tar.gz
 *.zip
 *.iso
-*.dmg
+*.dmggit
 *.pdf
 *.key
 *.afphoto
